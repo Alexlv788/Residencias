@@ -1,6 +1,18 @@
-        <?php
-        session_start();
-        ?>
+<?php
+
+
+session_start();
+#Se valida si la variable de sesion ha sido establecida
+#si no lo fue se termina la sesion iniciada y se muestra el mensaje
+#para indicar que no hay acceso
+if(!isset($_SESSION['departamento'])){
+        session_unset();
+        session_destroy();
+// Y nuevamente lo regresamos al login directamente
+        header("Location:../index.php");
+        exit();
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +32,7 @@
             <nav>
                 <a href="#">Informacion Personal</a>
                 <a href="#">No conformidad</a>
-                <a href="/PHP/cerrarSesion.php" class="logout">cerrar sesion</a>
+                <a href="../PHP/cerrarSesion.php" class="logout">cerrar sesion</a>
                 <label for="check" class="ocultar-menu">&#215</label>
             </nav>
         </header>
