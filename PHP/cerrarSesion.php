@@ -1,7 +1,10 @@
 <?php
-echo"HOlA";
 session_start();
+
+#Se recupera la sesion
+#se detiene y destruye 
+session_unset();
 session_destroy();
-echo"HOlA";
-header("Location:index.php");
+// Lo regresa al meno de Login
+header("Location:../index.php");
 ?>
