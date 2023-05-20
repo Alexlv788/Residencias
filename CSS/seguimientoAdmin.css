@@ -1,0 +1,242 @@
+/*Reset CSS*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Variables*/
+
+:root{
+    --bg-color:#FFF2F2;
+    --secundary-color:#28487b;
+    --main-color:#1B396A;
+    --tittle-color: #E5E0FF;
+    --main-shadow:#0e264d; 
+}
+
+body{
+    /* background: linear-gradient(to right, #444346,  #3c3b3e, #191818); */
+    background-color: var(--bg-color);
+}
+
+/*----------------------------------Header--------------------------------------*/
+header{
+    height: 100px;
+    background-color: var(--main-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+ .mainText{
+    color: var(--tittle-color);
+    text-align: center;
+    font-size: 40px;
+    font-weight: 200;
+    text-transform: uppercase;
+} 
+
+nav a{
+    text-transform: uppercase;
+    color:var(--tittle-color);
+    text-decoration: none;
+    padding: 0 10px;
+    transition: 0.4s;
+}
+
+.mostrar-menu, .ocultar-menu{
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+    transition: 0.4s;
+    color: var(--tittle-color);
+}
+.mostrar-menu{
+    order: 1;
+}
+
+nav a:hover,
+.mostrar-menu:hover, 
+.ocultar-menu:hover{
+    color : #F7C04A;
+}
+
+#check{
+    display: none;
+}
+
+/*-----------------------Main---------------------------*/
+main{
+
+    width: 100%;
+    height: 100%;
+    margin-top: 50px;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+table{
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+ 
+}
+
+thead{
+    background-color: var(--secundary-color);
+}
+tr:hover td:not(#delete){
+    background-color: #44444472;
+    color: white;
+}
+th{
+    width: 13.7%;
+    border: 2px solid var(--main-shadow);
+    color: white;
+    height: 40px;
+    font-size: 20px;
+    padding: 5px;
+    text-align: left;
+}
+
+td{
+    width: 13.7%;
+    border: 2px solid var(--secundary-color);
+    color: #444;
+    height: 40px;
+    font-size: 15px;
+    padding: 5px;
+    text-align: left;
+    /* transition: 0.2s ease-in; */
+}
+
+#delete{
+    border: none;
+    padding-left: 20px;
+    display: flex;
+    width: 50px;
+}
+
+button{
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+button:active{
+    transform: translateY(2px);
+}
+
+
+/*------------Footer--------------------------*/
+.footer{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    row-gap: 30px;
+    margin-top: 20px;
+}
+
+.footer p{
+    width: 100%;
+}
+.footer p:first-of-type{
+    text-align: left;
+    padding-left: 20px;
+}
+.footer p:last-of-type{
+    text-align: right;
+    padding-right: 20px;
+}
+
+/*Responsive*/
+@media(max-width: 768px){
+    /*----------------------header--------------------*/
+    .mostrar-menu,
+    .ocultar-menu{
+        display: block;
+    }
+
+    nav {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--main-color);
+        right: -100%;
+        top: 0;
+        text-align: center;
+        padding: 100px 0;
+        z-index: 100;
+        transition: 0.8s;
+    }
+
+    nav a{
+        display: block;
+        padding: 20px 0;
+    }
+
+    nav .logout{
+        position: relative;
+        top: 40%;
+    }
+
+    .ocultar-menu{
+        position: absolute;
+        top: 40px;
+        right: 40px;
+    }
+
+    #check:checked~nav{
+        right: 0;
+    }
+
+
+    /*-------------------------Main-------------------------*/
+    main{
+        margin: 50px 0;
+        width: 100%;
+        display: grid;
+        place-items: center;
+    }
+    /*-------------------------Table-------------------------*/
+    table{
+        width: 100%;
+    }
+
+    thead{
+        display: none;
+    }
+    table tr:not(:last-of-type){
+        display: block;
+        font-size: 15px;
+        margin-bottom: 8px;
+        border-bottom: 1px solid var(--main-shadow) ;
+    }
+    
+    table tr td{
+        display: block;
+        font-size: 10px;
+        width: 100%;
+        text-align: right;
+    }
+
+    #delete{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        border: none;
+        
+    }
+ 
+   table td::before{
+    content: attr(data-label);
+    font-weight: bold;
+    text-transform: uppercase;
+    float: left;
+   } 
+}

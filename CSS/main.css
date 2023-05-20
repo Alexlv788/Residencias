@@ -1,0 +1,310 @@
+/*Reset CSS*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*Variables*/
+
+:root{
+    --bg-color:#FFF2F2;
+    --secundary-color:#28487b;
+    --main-color:#1B396A;
+    --tittle-color: #E5E0FF;
+    --main-shadow:#0e264d; 
+}
+
+body{
+    /* background: linear-gradient(to right, #444346,  #3c3b3e, #191818); */
+    background-color: var(--bg-color);
+}
+
+/*----------------------------------Header--------------------------------------*/
+header{
+    height: 100px;
+    background-color: var(--main-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+ .mainText{
+    color: var(--tittle-color);
+    text-align: center;
+    font-size: 40px;
+    font-weight: 200;
+    text-transform: uppercase;
+} 
+
+nav a{
+    text-transform: uppercase;
+    color:var(--tittle-color);
+    text-decoration: none;
+    padding: 0 10px;
+    transition: 0.4s;
+}
+
+.mostrar-menu, .ocultar-menu{
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+    transition: 0.4s;
+    color: var(--tittle-color);
+}
+.mostrar-menu{
+    order: 1;
+}
+
+nav a:hover,
+.mostrar-menu:hover, 
+.ocultar-menu:hover{
+    color : #F7C04A;
+}
+
+#check{
+    display: none;
+}
+
+
+
+/*------------------------Main--------------------------------*/
+
+main{
+    display: flex;
+    align-items: center;/*eje y*/
+    justify-content:center ; /* eje x*/
+    width: 90%;
+    padding: 20px;
+    margin: 20px auto;
+    color: var(--tittle-color);
+    background-color: var(--secundary-color);
+    border-radius:10px; 
+}
+
+form{
+    text-align: center;
+    display: grid;
+    /*place-items: center; centrar con grid*/
+    grid-template-columns: auto auto;
+    width: 100%;
+    row-gap: 30px;
+}
+
+.elemento1, .elemento2, .elemento5, .elemento6, .elemento7, .elemento8, .elemento11, .boton{
+    grid-column: 1/3;
+    margin-bottom: 20px;
+}
+
+ .elemento2, .elemento5{
+    height:100%;
+    border-radius: 10px;
+}
+.elemento1{
+    height: 100px;
+}
+.elemento3{
+    border-radius: 10px 0 0 10px;
+    height: 100%;
+
+}
+.elemento4{
+    border-radius: 0 10px 10px 0;
+    height: 100%;
+}
+
+.elemento1 select{
+    width: 50%;
+    font-size: 16px;
+    box-sizing: border-box;
+    /* font-family: 'Verdana', sans-serif; */
+    font-weight: 400;
+    color: #444;
+    margin: 20px auto;
+    border: 1px solid #aaa;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.03);
+    border-radius: .3em;
+    height: 2em;
+    padding-left: 20px;
+}
+
+.elemento1 select option:hover{
+    text-decoration: none;
+    border-bottom: 1px solid var(--main-color);
+}
+
+div h2{
+    margin: 0 0 30px;
+    font-size: 30px;
+    color: white;
+}
+
+label{
+font-size: 20px;
+margin-right: 5px;
+}
+
+
+.solicitud label, .analisis label{
+    display: block;
+    font-size: 20px;
+    }
+
+.solicitud input, .analisis input{
+    width: 50%;
+    font-size: 16px;
+    box-sizing: border-box;
+    /* font-family: 'Verdana', sans-serif; */
+    font-weight: 400;
+    color: #444;
+    margin: 20px auto;
+    border: 1px solid #aaa;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.03);
+    border-radius: .3em;
+    height: 2em;
+    padding-left: 20px;
+}
+.elemento6{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    height: 100%;
+    margin-bottom: 100px;
+    place-items: center;
+    /* border: 5px solid white;
+    border-radius: 8px; */
+}
+
+.elemento6 h2{
+    grid-column: 1/5;
+}
+
+.tablaPA{
+    width: 16rem;
+}
+
+.tablaPA input{
+    width: 90%;
+    font-size: 16px;
+    box-sizing: border-box;
+    /* font-family: 'Verdana', sans-serif; */
+    font-weight: 400;
+    color: #444;
+    border: 1px solid #aaa;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.03);
+    border-radius: .3em;
+    height: 2em;
+    padding-left: 20px;
+    margin-top: 20px;
+
+}
+
+.boton{
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.boton input{
+    width: 20%;
+    height: 50px;
+    text-transform: uppercase;
+    font-size: 20px;
+    background-color: var(--main-color);
+    border: none;
+    color: white;
+    border: 2px solid white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.footer{
+    width: 185%;
+    display: flex;
+    justify-content: space-around;
+    row-gap: 30px;
+}
+
+.footer p{
+    width: 100%;
+}
+.footer p:first-of-type{
+    text-align: left;
+}
+.footer p:last-of-type{
+    text-align: right;
+}
+
+/*Responsive*/
+@media(max-width: 768px){
+    /*Header*/
+    .mostrar-menu,
+    .ocultar-menu{
+        display: block;
+    }
+
+    nav {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--main-color);
+        right: -100%;
+        top: 0;
+        text-align: center;
+        padding: 100px 0;
+        z-index: 100;
+        transition: 0.8s;
+    }
+
+    nav a{
+        display: block;
+        padding: 20px 0;
+    }
+
+    nav .logout{
+        position: relative;
+        top: 40%;
+    }
+
+    .ocultar-menu{
+        position: absolute;
+        top: 40px;
+        right: 40px;
+    }
+
+    #check:checked~nav{
+        right: 0;
+    }
+
+    /*Main*/
+
+    main{
+        width: 80%;
+    }
+    .elemento3, .elemento4{
+        grid-column: 1/3;
+    }
+
+    .solicitud, .analisis{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .elemento1, .elemento2, .elemento3, .elemento4, .elemento5, .elemento6{
+        background-color: var(--secundary-color);
+        height: 100%;
+        border-radius: 10px;
+    }
+
+    
+    
+    /*Table*/
+    .elemento6{
+        height: 100%;
+        place-items: center; 
+    }
+    .tablaPA{
+        grid-column: 1/5;
+    }
+
+}
