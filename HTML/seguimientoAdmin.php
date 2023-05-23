@@ -1,10 +1,24 @@
+<?php
+
+session_start();
+#Se valida si la variable de sesion ha sido establecida
+#si no lo fue se termina la sesion iniciada y se muestra el mensaje
+#para indicar que no hay acceso
+if(!isset($_SESSION['departamento'])){
+        session_unset();
+        session_destroy();
+// Y nuevamente lo regresamos al login directamente
+        header("Location:../index.php");
+        exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/CSS/seguimientoAdmin.css">
+    <link rel="stylesheet" href="/CSS/seguimiento.css">
     <script src="https://kit.fontawesome.com/2fabd7a9b2.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
@@ -13,7 +27,7 @@
         <h1 class="mainText">SEGUIMIENTO DEL RAC</h1>
         <input type="checkbox" name="" id="check">
         <label for="check" class="mostrar-menu">&#8801</label>
-        <nav>
+        <nav> 
             <a href="#">Informacion Personal</a>
             <a href="#">No conformidad</a>
             <a href="#" class="logout">cerrar sesion</a>
@@ -22,6 +36,10 @@
     </header>
 
     <main>
+        <div class = "logos">
+            <img src="/SOURCES/IMG/itlp.jpg" alt="Logo ITLP">
+            <img src="/SOURCES/IMG/tecNM.jpg" alt="Logo TecNM">
+        </div>
         <table>
             <thead>
                 <tr>
@@ -34,7 +52,7 @@
                     <th>Responsable de la verificacion</th>
                 </tr>
                 <tbody>
-                    <tr>
+                    <!-- <tr>
                         <td data-label = "Folio">HOLA</td>
                         <td data-label = "Responsable">HOLA</td>
                         <td data-label = "Descripcion">HOLA</td>
@@ -43,7 +61,8 @@
                         <td data-label = "Fecha Programada">HOLA</td>
                         <td data-label = "Responsable de la verificacion">HOLA</td>
                         <td id="delete"> <button><i class="fa-solid fa-circle-xmark fa-3x" style="color: #da1010;"></i></button></td>
-                    </tr>
+                    </tr> -->
+                    <?php include("../PHP/obtenerSolicitudes.php");  ?>
                 </tbody>
             </thead>
         </table>

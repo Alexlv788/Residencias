@@ -35,6 +35,10 @@ if(!isset($_SESSION['departamento'])){
     </header>
 
     <main>
+        <div class = "logos">
+            <img src="/SOURCES/IMG/itlp.jpg" alt="Logo ITLP">
+            <img src="/SOURCES/IMG/tecNM.jpg" alt="Logo TecNM">
+        </div>
         <table>
             <thead>
                 <tr>

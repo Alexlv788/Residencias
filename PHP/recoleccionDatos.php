@@ -27,6 +27,7 @@ VALUES ( '$folio','$area', '$descripcion',
     mysqli_query($conexion, $consulta) or die("Conexion fallida".mysqli_error($conexion));;   
     mysqli_close($conexion);
 
+header("Location:../HTML/seguimiento.php");
 }
 
 ?>

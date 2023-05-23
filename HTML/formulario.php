@@ -21,7 +21,7 @@ if(!isset($_SESSION['departamento'])){
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
-        <link rel="stylesheet" href="/CSS/main.css">
+        <link rel="stylesheet" href="../CSS/main.css" type="text/css">
     </head>
     <body>
         <header>
@@ -30,14 +30,18 @@ if(!isset($_SESSION['departamento'])){
             <input type="checkbox" name="" id="check">
             <label for="check" class="mostrar-menu">&#8801</label>
             <nav>
-                <a href="#">Informacion Personal</a>
-                <a href="#">No conformidad</a>
-                <a href="../PHP/cerrarSesion.php" class="logout">cerrar sesion</a>
+                <a href="../HTML/seguimiento.php">Informacion Personal</a>
+                <a href="../HTML/seguimientoAdmin.php">No conformidad</a>
+                <a href="..//cerrarSesion.php" class="logout">cerrar sesion</a>
                 <label for="check" class="ocultar-menu">&#215</label>
             </nav>
         </header>
 
         <main>
+            <div class = "logos">
+                <img src="/SOURCES/IMG/itlp.jpg" alt="Logo ITLP">
+                <img src="/SOURCES/IMG/tecNM.jpg" alt="Logo TecNM">
+            </div>
             <form action="/PHP/recoleccionDatos.php" method="post">
                 <div class="elemento1">
                     <h2>Area solicitante</h2>
