@@ -31,7 +31,12 @@ if ($_POST) {
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../CSS/login.css" type="text/css">
+        <link rel="stylesheet" href="../CSS/login.css?uuid=<?php echo uniqid(); ?>" type="text/css">
+            <!-- *****************Fuentes************************* -->
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;900&display=swap" rel="stylesheet">
+            <!-- *****************Fuentes************************* -->
         <title>Document</title>
     </head>
     <body>

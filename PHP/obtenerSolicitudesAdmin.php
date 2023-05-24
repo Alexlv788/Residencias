@@ -29,10 +29,8 @@ foreach ($conexion->query("SELECT * FROM solicitudes") as $solicitud) {
         <td data-label = 'Estado'>HOLA</td>
         <td data-label = 'Fecha Programada'>".$solicitud['fecha_programada']."</td>
         <td data-label = 'Responsable de la verificación'>HOLA</td>
-        <td id='evidencia'>
-            <button id='mandarEvidencia' onclick = 'abrirVentana()'>Mandar evidencias</button>
-        </td>
-    </tr>'
+        <td id='delete'><button class= 'delete'>Cerrar RAC</button></td>
+    </tr>
     
     ";
 }

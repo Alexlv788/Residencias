@@ -18,7 +18,13 @@ if(!isset($_SESSION['departamento'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/seguimiento.css" type="text/css">
+    <link rel="stylesheet" href="/CSS/seguimiento.css?uuid=<?php echo uniqid(); ?>">
+    <!-- *****************Fuentes************************* -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;900&display=swap" rel="stylesheet">
+    <!-- *****************Fuentes************************* -->
+    <script src="https://kit.fontawesome.com/2fabd7a9b2.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 <body>
@@ -26,7 +32,7 @@ if(!isset($_SESSION['departamento'])){
         <h1 class="mainText">SEGUIMIENTO DEL RAC</h1>
         <input type="checkbox" name="" id="check">
         <label for="check" class="mostrar-menu">&#8801</label>
-        <nav>
+        <nav> 
             <a href="#">Informacion Personal</a>
             <a href="#">No conformidad</a>
             <a href="#" class="logout">cerrar sesion</a>
@@ -44,22 +50,33 @@ if(!isset($_SESSION['departamento'])){
                 <tr>
                     <th>Folio</th>
                     <th>Responsable</th>
-                    <th>Descripción</th>
-                    <th>Fecha de Revisión</th>
+                    <th>Descripcion</th>
+                    <th>Fecha de Revision</th>
                     <th>Estado</th>
                     <th>Fecha Programada</th>
-                    <th>Responsable de la verificación</th>
+                    <th>Responsable de la verificacion</th>
                 </tr>
+                <tbody>
+                    <?php include("../PHP/obtenerSolicitudes.php");  ?>
+                </tbody>
             </thead>
-            <tbody>
-                <?php include("../PHP/obtenerSolicitudes.php");  ?>
-            </tbody>
-           
         </table>
         <div class="footer">
             <p>CA-PO-03-02</p>
             <p>Rev. 2</p>
-        </div> 
+        </div>
     </main>
+    <div class="ventana" id="ventana">
+        <div>
+            <button class ="cerrar" id="cerrar" onclick = "cerrarVentana()"><i class="fa-solid fa-x" style="color: #f50511;"></i></button>
+            <form action="" method="post" class="formFile">
+                <h3>Ingresa las evidencias</h3>
+                <label for='files'>Adjunta los archivos</label>
+                <input type='file' id='files'>
+                <input type="submit" value="Enviar Archivos" >
+            </form>
+        </div>    
+    </div>
+    <script src="../JS/mostraVentana.js"></script>
 </body>
 </html>

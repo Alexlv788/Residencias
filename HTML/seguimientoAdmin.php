@@ -18,7 +18,12 @@ if(!isset($_SESSION['departamento'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/CSS/seguimiento.css">
+    <link rel="stylesheet" href="/CSS/seguimientoAdmin.css?uuid=<?php echo uniqid(); ?>">
+    <!-- *****************Fuentes************************* -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;900&display=swap" rel="stylesheet">
+    <!-- *****************Fuentes************************* -->
     <script src="https://kit.fontawesome.com/2fabd7a9b2.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
@@ -52,17 +57,7 @@ if(!isset($_SESSION['departamento'])){
                     <th>Responsable de la verificacion</th>
                 </tr>
                 <tbody>
-                    <!-- <tr>
-                        <td data-label = "Folio">HOLA</td>
-                        <td data-label = "Responsable">HOLA</td>
-                        <td data-label = "Descripcion">HOLA</td>
-                        <td data-label = "Fecha de Revision">HOLA</td>
-                        <td data-label = "Estado">HOLA</td>
-                        <td data-label = "Fecha Programada">HOLA</td>
-                        <td data-label = "Responsable de la verificacion">HOLA</td>
-                        <td id="delete"> <button><i class="fa-solid fa-circle-xmark fa-3x" style="color: #da1010;"></i></button></td>
-                    </tr> -->
-                    <?php include("../PHP/obtenerSolicitudes.php");  ?>
+                    <?php include("../PHP/obtenerSolicitudesAdmin.php");  ?>
                 </tbody>
             </thead>
         </table>

@@ -19,6 +19,7 @@
 body{
     /* background: linear-gradient(to right, #444346,  #3c3b3e, #191818); */
     background-color: var(--bg-color);
+    font-family: 'Montserrat-regular', sans-serif;
 }
 
 /*----------------------------------Header--------------------------------------*/
@@ -79,6 +80,18 @@ main{
     flex-direction: column;
     align-items: center;
 }
+.logos{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 8rem;
+    justify-content: space-between;
+    margin-bottom: 5%;
+}
+
+.logos img{
+    width:25%
+}
 
 table{
   border-collapse: collapse;
@@ -95,7 +108,7 @@ tr:hover td:not(#delete){
     color: white;
 }
 th{
-    width: 13.7%;
+    width: 13%;
     border: 2px solid var(--main-shadow);
     color: white;
     height: 40px;
@@ -105,7 +118,7 @@ th{
 }
 
 td{
-    width: 13.7%;
+    width: 13%;
     border: 2px solid var(--secundary-color);
     color: #444;
     height: 40px;
@@ -115,19 +128,23 @@ td{
     /* transition: 0.2s ease-in; */
 }
 
-#delete{
-    border: none;
-    padding-left: 20px;
-    display: flex;
-    width: 50px;
+#delete, #evidencia{
+    width: 9%;
+    border: none;  
 }
 
 button{
     text-decoration: none;
     border: none;
     cursor: pointer;
+    width: 100%;
+    height: 40px;
+    color: white;
+    background-color: #D21312;
+    font-size: 15px;
+    border-radius: 8px;
+    text-transform: uppercase;
 }
-
 button:active{
     transform: translateY(2px);
 }
@@ -230,7 +247,11 @@ button:active{
         display: flex;
         justify-content: center;
         border: none;
-        
+    }
+
+    button{
+        width: 50%;
+        font-size: 20px;
     }
  
    table td::before{
