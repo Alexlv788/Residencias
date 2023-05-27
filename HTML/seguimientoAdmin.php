@@ -35,7 +35,7 @@ if(!isset($_SESSION['departamento'])){
         <nav> 
             <a href="#">Informacion Personal</a>
             <a href="#">No conformidad</a>
-            <a href="#" class="logout">cerrar sesion</a>
+            <a href="../PHP/cerrarSesion.php" class="logout">cerrar sesion</a>
             <label for="check" class="ocultar-menu">&#215</label>
         </nav>
     </header>
@@ -56,10 +56,11 @@ if(!isset($_SESSION['departamento'])){
                     <th>Fecha Programada</th>
                     <th>Responsable de la verificacion</th>
                 </tr>
-                <tbody>
-                    <?php include("../PHP/obtenerSolicitudesAdmin.php");  ?>
-                </tbody>
             </thead>
+            <tbody>
+                    <?php include("../PHP/obtenerSolicitudesAdmin.php");  ?>
+            </tbody>
+            
         </table>
         <div class="footer">
             <p>CA-PO-03-02</p>

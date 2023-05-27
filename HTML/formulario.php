@@ -30,18 +30,17 @@ if(!isset($_SESSION['departamento'])){
     </head>
     <body>
         <header>
-            <h1 class="mainText">ACCIONES CORRECTIVAS</h1>
-            <!-- <input type="button" value="Descargar guia" class="descarga"> -->
+            <h1 class="mainText">ACCIONES CORRECTIVAS</h1> 
             <input type="checkbox" name="" id="check">
             <label for="check" class="mostrar-menu">&#8801</label>
             <nav>
                 <a href="../HTML/seguimiento.php">Informacion Personal</a>
                 <a href="../HTML/seguimientoAdmin.php">No conformidad</a>
-                <a href="..//cerrarSesion.php" class="logout">cerrar sesion</a>
+                <a href="../PHP/cerrarSesion.php" class="logout">cerrar sesion</a>
                 <label for="check" class="ocultar-menu">&#215</label>
             </nav>
         </header>
-
+        <a href="../FILES/CA-PO-03-01 RAC.docx" download="Guía-solicitud-mantenimiento-correctivo" target="_blank" class="descarga">Guía de llenado</a>
         <main>
             <div class = "logos">
                 <img src="/SOURCES/IMG/itlp.jpg" alt="Logo ITLP">
@@ -49,7 +48,7 @@ if(!isset($_SESSION['departamento'])){
             </div>
             <form action="/PHP/recoleccionDatos.php" method="post">
                 <div class="elemento1">
-                    <h2>Area solicitante</h2>
+                    <h2>La no conformidad proviene de:</h2>
                     <select name="area" id="lang">
                         <option value="default" disabled="disabled" selected="selected">Seleccione Area</option>
                         <option value="queja de cliente">Queja de Cliente</option>
@@ -87,10 +86,8 @@ if(!isset($_SESSION['departamento'])){
                     <input type="radio" name="opc2" id="si2" value="Si">
                     <label for="no2">No</label>
                     <input type="radio" name="opc2" id="no2" value="No">
-                    <div>
-                        
-                    </div>
                 </div>
+                
                 <!-- ------------------------------------------ -->
                 <div class="elemento5">
                     <h2>Analisis de datos:</h2>

@@ -33,7 +33,6 @@ header{
     align-items: center;
     padding: 0 20px;
 }
-
  .mainText{
     color: var(--tittle-color);
     text-align: center;
@@ -41,15 +40,14 @@ header{
     font-weight: 200;
     text-transform: uppercase;
 } 
-
 nav a{
     text-transform: uppercase;
     color:var(--tittle-color);
     text-decoration: none;
     padding: 0 10px;
     transition: 0.4s;
+    font-size: 20px;
 }
-
 .mostrar-menu, .ocultar-menu{
     font-size: 30px;
     cursor: pointer;
@@ -60,17 +58,14 @@ nav a{
 .mostrar-menu{
     order: 1;
 }
-
 nav a:hover,
 .mostrar-menu:hover, 
 .ocultar-menu:hover{
     color : #F7C04A;
 }
-
 #check{
     display: none;
 }
-
 /*-----------------------Main---------------------------*/
 main{
 
@@ -90,7 +85,6 @@ main{
     justify-content: space-between;
     margin-bottom: 5%;
 }
-
 .logos img{
     width:25%
 }
@@ -101,7 +95,6 @@ table{
   table-layout: fixed;
  
 }
-
 thead{
     background-color: var(--secundary-color);
 }
@@ -114,29 +107,21 @@ th{
     border: 2px solid var(--main-shadow);
     color: white;
     height: 40px;
-    font-size: 20px;
+    font-size: 25px;
     padding: 5px;
     text-align: left;
 }
-
 td{
     width: 13%;
     border: 2px solid var(--secundary-color);
     color: #444;
     height: 40px;
-    font-size: 15px;
+    font-size: 20px;
     padding: 5px;
     text-align: left;
-    /* transition: 0.2s ease-in; */
 }
-
-#evidencia{
-    width: 9%;
-    border: none;  
-}
-
-
-    button{
+#evidencia{width: 9%;border: none;}
+button{
     text-decoration: none;
     border: none;
     cursor: pointer;
@@ -146,9 +131,8 @@ td{
     border-radius: 8px;
     text-align: center;
     color: white;
-    font-size: 14px;
+    font-size: 18px;
     text-transform: uppercase;
-
 }
 
 button:active{
@@ -171,14 +155,15 @@ button:active{
 .footer p:first-of-type{
     text-align: left;
     padding-left: 20px;
+    font-size: 20px;
 }
 .footer p:last-of-type{
     text-align: right;
     padding-right: 20px;
+    font-size: 20px;
 }
 /*-------------------------------------Ventana-----------------------------*/
-.ventana{
-    width: 100%;
+.ventana{width: 100%;
     height: 100vh;
     position: absolute;
     top: 0;
@@ -187,9 +172,7 @@ button:active{
     place-items: center;
     background-color: #ffffff05;
     backdrop-filter: blur(10px);
-    display: none;
-}
-
+    display: none;}
 .ventana div{
     display: flex;
     flex-direction: column;
@@ -211,7 +194,6 @@ button:active{
     background-color: white;
     border: 2px solid red;
 }
-
 .formFile{
     width: 100%;
     height: 80%;
@@ -237,14 +219,8 @@ button:active{
     padding: 2%;
     cursor: pointer;
     margin-bottom: 5%;
-    font-size: 15px;
-}
-
-.formFile input[type="file"]{
-    display: none;
-
-}
-
+    font-size: 15px;}
+.formFile input[type="file"]{display: none;}
 .formFile input[type="submit"]{
     text-decoration: none;
     border: none;
@@ -255,10 +231,7 @@ button:active{
     border-radius: 8px;
     cursor: pointer;
     font-size: 15px;
-    color: white;
-}
-
-
+    color: white;}
 /*Responsive*/
 @media(max-width: 768px){
     /*----------------------header--------------------*/
@@ -309,10 +282,7 @@ button:active{
         place-items: center;
     }
     /*-------------------------Table-------------------------*/
-    table{
-        width: 100%;
-    }
-
+    table{width: 100%; }
     thead{
         display: none;
     }
@@ -322,15 +292,13 @@ button:active{
         margin-bottom: 8px;
         border-bottom: 1px solid var(--main-shadow) ;
     }
-    
     table tr td{
         display: block;
         font-size: 10px;
         width: 100%;
         text-align: right;
     }
-
-    #delete{
+    #evidencia{
         width: 100%;
         display: flex;
         justify-content: center;
@@ -341,7 +309,6 @@ button:active{
         width: 50%;
         font-size: 20px;
     }
- 
    table td::before{
     content: attr(data-label);
     font-weight: bold;

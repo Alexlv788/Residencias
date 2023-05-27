@@ -46,6 +46,7 @@ nav a{
     text-decoration: none;
     padding: 0 10px;
     transition: 0.4s;
+    font-size: 20px;
 }
 
 .mostrar-menu, .ocultar-menu{
@@ -112,7 +113,7 @@ th{
     border: 2px solid var(--main-shadow);
     color: white;
     height: 40px;
-    font-size: 20px;
+    font-size: 25px;
     padding: 5px;
     text-align: left;
 }
@@ -122,13 +123,13 @@ td{
     border: 2px solid var(--secundary-color);
     color: #444;
     height: 40px;
-    font-size: 15px;
+    font-size: 20px;
     padding: 5px;
     text-align: left;
     /* transition: 0.2s ease-in; */
 }
 
-#delete, #evidencia{
+#delete{
     width: 9%;
     border: none;  
 }
@@ -141,7 +142,7 @@ button{
     height: 40px;
     color: white;
     background-color: #D21312;
-    font-size: 15px;
+    font-size: 18px;
     border-radius: 8px;
     text-transform: uppercase;
 }
@@ -161,6 +162,7 @@ button:active{
 
 .footer p{
     width: 100%;
+    font-size: 20px;
 }
 .footer p:first-of-type{
     text-align: left;

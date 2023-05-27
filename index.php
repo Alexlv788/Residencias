@@ -1,8 +1,10 @@
 <?php
 include('./PHP/conexion.php');
+
 if ($_POST) {
     $pass = $_POST["pass"];
     $correo = $_POST["correo"];
+    
     $consulta = "SELECT * FROM usuarios
                  WHERE correo = '$correo'
                  AND contraseña = '$pass'";
@@ -16,7 +18,13 @@ if ($_POST) {
     $_SESSION['departamento'] = $datos['departamento'];
     // echo $_SESSION['departamento'];
     /*Direccionamos al usuario al formulario del RAC */
-    header("Location:/HTML/formulario.php");   
+    if ($datos['tipo_usuario'] == 0) {
+        header("Location:/HTML/formulario.php");   
+    }
+    else {
+        header("Location:/HTML/seguimientoAdmin.php");   
+    }
+
    }
    else{
     $mensaje = "Asegurese de que el correo y la contraseña sean los correctos";
@@ -52,8 +60,10 @@ if ($_POST) {
                 <div class="datos" id="passContainer">
                     <label for="pass">Contraseña</label>
                     <input type="password" name="pass" id="pass" required>
-                    <label for="passControl" class="show-icon" id="hide"><img src="/SOURCES/icons/icons8-hide-16.png" alt=""></label>
-                    <label for="passControl" class="hide-icon" id="show"><img src="/SOURCES/icons/icons8-eye-16.png" alt=""></label>
+                    <label for="passControl" class="show-icon" id="hide">
+                        <img src="/SOURCES/icons/icons8-hide-16.png" alt="" class = "icono"></label>
+                    <label for="passControl" class="hide-icon" id="show">
+                        <img src="/SOURCES/icons/icons8-eye-16.png" alt="" class = "icono"></label>
                     <input type="checkbox" name="" id="passControl">
                 </div>
 
