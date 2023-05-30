@@ -12,6 +12,11 @@ if(!isset($_SESSION['departamento'])){
         exit();
 }
 ?>
+
+<?php
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -71,10 +76,10 @@ if(!isset($_SESSION['departamento'])){
         <div>
             <button class ="cerrar" id="cerrar" onclick = "cerrarVentana()">
             <i class="fa-solid fa-x" style="color: #f50511;"></i></button>
-            <form action="" method="post" class="formFile">
+            <form action="/PHP/obtenerEvidencias.php" method="post" class="formFile" enctype="multipart/form-data">
                 <h3>Ingresa las evidencias</h3>
                 <label for='files'>Adjunta los archivos</label>
-                <input type='file' id='files'>
+                <input type='file' id='files' name="evidencias[]" multiple = "" >
                 <input type="submit" value="Enviar Archivos" >
             </form>
         </div>    

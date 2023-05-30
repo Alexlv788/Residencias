@@ -14,6 +14,10 @@ if(!isset($_SESSION['departamento'])){
 }
 ?>
 
+<?php 
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -124,8 +128,8 @@ if(!isset($_SESSION['departamento'])){
                 </div>
 
                 <div class="footer">
-                        <p>CA-PO-03-01</p>
-                        <p>Rev. 2</p>
+                        <p class ="izq">CA-PO-03-01</p>
+                        <p class ="der">Rev. 2</p>
                 </div>
             </form>
             
