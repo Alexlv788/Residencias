@@ -31,16 +31,13 @@ ENGINE = InnoDB;
 
 CREATE TABLE `racbd`.`evidencias` (
   `id_evidencias` INT NOT NULL AUTO_INCREMENT,
+  `folio` VARCHAR(6) NOT NULL,
   `imagenes` VARCHAR(200) NOT NULL,
-  `activo` smallint NOT NULL default 1,
-  `id_usuario` INT UNSIGNED NOT NULL,
   `id_solicitud` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`id_evidencias`),
-  foreign key (`id_usuario`) references usuarios(`id_usuario`),
   foreign key (`id_solicitud`) references solicitudes(`id_solicitud`),
-  UNIQUE INDEX `id_evidencias_UNIQUE` (`id_evidencias` ASC));
+  UNIQUE INDEX `id_evidencias_UNIQUE` (`id_evidencias` ASC) VISIBLE);
   
-
 
 START TRANSACTION;
 USE `RacBD`;

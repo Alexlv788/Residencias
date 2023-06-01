@@ -5,18 +5,44 @@ session_start();
 #si no lo fue se termina la sesion iniciada y se muestra el mensaje
 #para indicar que no hay acceso
 if(!isset($_SESSION['departamento'])){
-        session_unset();
-        session_destroy();
+    session_unset();
+    session_destroy();
 // Y nuevamente lo regresamos al login directamente
-        header("Location:../index.php");
-        exit();
+    header("Location:../index.php");
+    exit();
 }
+
+$btnMandarEvicencias = isset($_POST['btnMandarEvidencia']) ? $_POST['btnMandarEvidencia']:'';
+$folio = isset($_POST['btn-folio']) ? $_POST['btn-folio']: '' ;
+$mensaje = isset($_POST['mensaje']) ? $_POST['mensaje']: '' ;
+if($btnMandarEvicencias != ''){
+    echo'
+    <div class="ventana" id="ventana">
+    <div>
+        <button class ="cerrar" id="cerrar" onclick="cerrarVentana()" >
+        <i class="fa-solid fa-x" style="color: #f50511;"></i></button>
+        <form action="../PHP/obtenerEvidencias.php" method="post" class="formFile" enctype="multipart/form-data">
+            <h3>Ingresa las evidencias</h3>
+            <label for="files">Adjunta los archivos</label>
+            <input type="file" id="files" name="evidencias[]" multiple = "" >
+            <input name = "mandar" type="submit" value="Enviar Archivos" >
+            <input name ="folio" type="hidden" value="'.$folio.'" >
+        </form>
+        </div>    
+    </div>    
+    ';
+}else if($mensaje != ''){
+    echo '
+    <script>
+        alert("'.$mensaje.'");
+    </script>
+    ';  
+}
+
+
 ?>
+  
 
-<?php
-
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,6 +56,8 @@ if(!isset($_SESSION['departamento'])){
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;900&display=swap" rel="stylesheet">
     <!-- *****************Fuentes************************* -->
     <script src="https://kit.fontawesome.com/2fabd7a9b2.js" crossorigin="anonymous"></script>
+    
+
     <title>Document</title>
 </head>
 <body>
@@ -38,12 +66,13 @@ if(!isset($_SESSION['departamento'])){
         <input type="checkbox" name="" id="check">
         <label for="check" class="mostrar-menu">&#8801</label>
         <nav> 
-            <a href="#">Informacion Personal</a>
-            <a href="#">No conformidad</a>
+            <a href="../HTML/formulario.php">Solicitud del RAC</a>
             <a href="../PHP/cerrarSesion.php" class="logout">cerrar sesion</a>
             <label for="check" class="ocultar-menu">&#215</label>
         </nav>
     </header>
+
+   
 
     <main>
         <div class = "logos">
@@ -72,18 +101,10 @@ if(!isset($_SESSION['departamento'])){
             <p>Rev. 2</p>
         </div>
     </main>
-    <div class="ventana" id="ventana">
-        <div>
-            <button class ="cerrar" id="cerrar" onclick = "cerrarVentana()">
-            <i class="fa-solid fa-x" style="color: #f50511;"></i></button>
-            <form action="/PHP/obtenerEvidencias.php" method="post" class="formFile" enctype="multipart/form-data">
-                <h3>Ingresa las evidencias</h3>
-                <label for='files'>Adjunta los archivos</label>
-                <input type='file' id='files' name="evidencias[]" multiple = "" >
-                <input type="submit" value="Enviar Archivos" >
-            </form>
-        </div>    
-    </div>
-    <script src="../JS/mostraVentana.js"></script>
+
+    
+
+    
+    <script src="../JS/mostraVentana.js?uuid=<?php echo uniqid(); ?>"></script>
 </body>
 </html>

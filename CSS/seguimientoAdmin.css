@@ -123,21 +123,25 @@ td{
     padding: 5px;
     text-align: left;
 }
+.overflow{
+    overflow-x: scroll;
+}
 #delete{
     width: 9%;
     border: none;  
 }
 
-button{
+#cerrarRAC{
     text-decoration: none;
     border: none;
     cursor: pointer;
     width: 100%;
-    height: 40px;
-    color: white;
+    height: 2.5em;
     background-color: #D21312;
-    font-size: 18px;
     border-radius: 8px;
+    text-align: center;
+    color: white;
+    font-size: 0.8rem;
     text-transform: uppercase;
 }
 
@@ -169,6 +173,109 @@ button:active{
     padding-right: 20px;
 
 }
+
+
+/*-------------------------Alertas--------------------------*/
+.contenedorAlertas{
+    width: 40%;
+    height: 50rem;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    position: absolute;
+    top: 10%;
+    right: 2%;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 10px 10px 20px black;
+    display: none;
+    align-items:center; /* eje x*/
+    padding: 1% 1%;
+    flex-direction: column;
+}
+
+.evidencias{
+    width: 100%;
+    height: 28rem;
+    background-color: #28487b;
+    border-radius: 10px;
+    display: flex;
+    align-items:center; /* eje x*/
+    flex-direction: column;
+    padding-top: 3%;
+    padding-right: 3%;
+    margin: 5% 0;
+}
+
+.descripcion{
+    width: 100%;
+    text-align: left;
+    padding-left: 3%;
+    margin-bottom: 3%;
+}
+
+.descripcion p{
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.imagenes{
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-around;
+    row-gap: 10%;
+    overflow-y: scroll;
+    height: 20rem;
+    margin-bottom: 10%;
+}
+
+.imagenes a{
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+    row-gap: 12px;
+    
+}
+
+.imagenes img{
+    width: 12rem;
+    height: 12rem;
+    object-fit: cover;
+   
+}
+.cerrar{
+    width: 10%;
+    color: #D21312;
+    background-color: white;
+    border:1px solid #D21312;
+    border-radius: 8px;
+    
+}
+
+ /*-------------------Semaforo--------------------*/
+ .verde, .amarillo, .rojo{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    margin: 0 auto;
+}
+
+.verde{
+    background-color: green;
+}
+.amarillo{
+    background-color: yellow;
+}
+
+.rojo{
+    background-color: red;
+}
+
+
 /*Responsive*/
 @media(max-width: 768px){
     /*----------------------header--------------------*/

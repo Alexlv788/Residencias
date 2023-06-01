@@ -1,6 +1,4 @@
 <?php
-
-
 session_start();
 #Se valida si la variable de sesion ha sido establecida
 #si no lo fue se termina la sesion iniciada y se muestra el mensaje
@@ -13,9 +11,9 @@ if(!isset($_SESSION['departamento'])){
         exit();
 }
 ?>
-
 <?php 
-
+    date_default_timezone_set("America/Mexico_City");
+    $fechaActual = date("Y-m-d");
 ?>
 
 <!DOCTYPE html>
@@ -38,8 +36,7 @@ if(!isset($_SESSION['departamento'])){
             <input type="checkbox" name="" id="check">
             <label for="check" class="mostrar-menu">&#8801</label>
             <nav>
-                <a href="../HTML/seguimiento.php">Informacion Personal</a>
-                <a href="../HTML/seguimientoAdmin.php">No conformidad</a>
+                <a href="../HTML/seguimiento.php">Seguimiento del RAC</a>
                 <a href="../PHP/cerrarSesion.php" class="logout">cerrar sesion</a>
                 <label for="check" class="ocultar-menu">&#215</label>
             </nav>
@@ -111,11 +108,13 @@ if(!isset($_SESSION['departamento'])){
                     </div>
                     <div class="tablaPA">
                         <label for="responsable">RESPONSANLE</label>
-                        <input type="text" name="responsablePA" id="responsable" value = "<?php echo $_SESSION['departamento']; ?> ">
+                        <input type="text" name="responsablePA" id="responsable" 
+                        value = "<?php echo $_SESSION['departamento']; ?> ">
                     </div>
                     <div class="tablaPA">
                         <label for="fechaProgramada">FECHA PROGRAMADA</label>
-                        <input type="date" name="fechaProgramadaPA" id="fechaProgramada">
+                        <input type="date" name="fechaProgramadaPA" id="fechaProgramada" 
+                        value = "<?php echo $fechaActual ?>">
                     </div>
                     <div class="tablaPA">
                         <label for="fechaTerminacion">FECHA DE TERMINACION</label>

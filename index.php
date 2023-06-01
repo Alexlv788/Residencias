@@ -1,14 +1,9 @@
 <?php
 include('./PHP/conexion.php');
-
 if ($_POST) {
     $pass = $_POST["pass"];
     $correo = $_POST["correo"];
-    
-    $consulta = "SELECT * FROM usuarios
-                 WHERE correo = '$correo'
-                 AND contraseña = '$pass'";
-    
+    $consulta = "SELECT * FROM usuarios WHERE correo = '$correo' AND contraseña = '$pass'";
    $res = mysqli_query($conexion, $consulta);
    $datos = mysqli_fetch_array($res);
    if ($datos!=null) {
@@ -16,23 +11,15 @@ if ($_POST) {
     session_start();
     /*Declaramos variables de Sesion que almacenen el departamento del usuario*/
     $_SESSION['departamento'] = $datos['departamento'];
-    // echo $_SESSION['departamento'];
     /*Direccionamos al usuario al formulario del RAC */
-    if ($datos['tipo_usuario'] == 0) {
-        header("Location:/HTML/formulario.php");   
-    }
-    else {
-        header("Location:/HTML/seguimientoAdmin.php");   
-    }
-
+    if ($datos['tipo_usuario'] == 0) {header("Location:/HTML/formulario.php");   
+    }else {
+        header("Location:/HTML/seguimientoAdmin.php");}
    }
    else{
     $mensaje = "Asegurese de que el correo y la contraseña sean los correctos";
    }
-    mysqli_close($conexion);
-}
-
-?>
+    mysqli_close($conexion);}?>
 <!DOCTYPE html>
 <html lang="en">
     <head>

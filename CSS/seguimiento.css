@@ -26,7 +26,7 @@ body{
 
 /*----------------------------------Header--------------------------------------*/
 header{
-    height: 5em;
+    height: 4em;
     background-color: var(--main-color);
     display: flex;
     justify-content: space-between;
@@ -98,6 +98,7 @@ table{
   width: 100%;
   table-layout: fixed;
  
+ 
 }
 thead{
     background-color: var(--secundary-color);
@@ -110,8 +111,8 @@ th{
     width: 13%;
     border: 2px solid var(--main-shadow);
     color: white;
-    height: 1.8em;
-    font-size: 1.5rem;
+    height: 1.5em;
+    font-size: 1.3rem;
     padding: 5px;
     text-align: left;
 }
@@ -119,15 +120,19 @@ td{
     width: 13%;
     border: 2px solid var(--secundary-color);
     color: #444;
-    height: 1.8em;
+    height: 1.5em;
     font-size: 1.3rem;
     padding: 5px;
     text-align: left;
+    
+}
+.overflow{
+    overflow-x: scroll;
 }
 #evidencia{width: 9%;
     border: none;
 }
-button{
+#mandarEvidencia{
     text-decoration: none;
     border: none;
     cursor: pointer;
@@ -137,7 +142,7 @@ button{
     border-radius: 8px;
     text-align: center;
     color: white;
-    font-size: 1rem;
+    font-size: 0.6rem;
     text-transform: uppercase;
 }
 
@@ -170,7 +175,8 @@ button:active{
 
 }
 /*-------------------------------------Ventana-----------------------------*/
-.ventana{width: 100%;
+.ventana{
+    width: 100%;
     height: 100vh;
     position: absolute;
     top: 0;
@@ -179,7 +185,8 @@ button:active{
     place-items: center;
     background-color: #ffffff05;
     backdrop-filter: blur(10px);
-    display: none;}
+    /* display: none; */
+}
 .ventana div{
     display: flex;
     flex-direction: column;
@@ -197,7 +204,7 @@ button:active{
 .cerrar{
     position: relative;
     left: 45%;
-    width: 5%;
+    width: 10%;
     background-color: white;
     border: 2px solid red;
 }
@@ -211,7 +218,7 @@ button:active{
 
 .formFile h3{
     text-decoration: none;
-    font-size: 4rem;
+    font-size: 2.5rem;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     margin-bottom: 5%;
@@ -226,7 +233,7 @@ button:active{
     padding-top:1%;
     cursor: pointer;
     margin-bottom: 5%;
-    font-size: 2rem;
+    font-size: 1.3rem;
 }
 
 
@@ -239,11 +246,31 @@ button:active{
     border: 2px solid var(--secundary-color);
     border-radius: 8px;
     cursor: pointer;
-    font-size: 2rem;
+    font-size: 1.3rem;
     color: white;}
 
     .formFile input[type="file"]{
         visibility: hidden;
+    }
+
+
+    /*-------------------Semaforo--------------------*/
+    .verde, .amarillo, .rojo{
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        margin: 0 auto;
+    }
+
+    .verde{
+        background-color: green;
+    }
+    .amarillo{
+        background-color: yellow;
+    }
+
+    .rojo{
+        background-color: red;
     }
 /*Responsive*/
 @media(max-width: 768px){
@@ -334,7 +361,6 @@ button:active{
    .cerrar{
 
     width: 10%;
-
    }
    .formFile h3{
     margin: 5% 0;

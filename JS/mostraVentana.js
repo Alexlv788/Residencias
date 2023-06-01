@@ -1,13 +1,14 @@
 let ventana = document.getElementById("ventana");
-let folio = document.getElementById("folio").value;
 
 function cerrarVentana(){
     ventana.style.display = 'none';
 }
 
-function abrirVentana () {
-    console.log("HOLA");
+function abrirVentana() {
+
     ventana.style.display = 'grid';
+
 }
+
 
 

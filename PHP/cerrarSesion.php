@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 #Se recupera la sesion
 #se detiene y destruye 
 session_unset();
