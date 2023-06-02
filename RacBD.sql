@@ -33,6 +33,7 @@ CREATE TABLE `racbd`.`evidencias` (
   `id_evidencias` INT NOT NULL AUTO_INCREMENT,
   `folio` VARCHAR(6) NOT NULL,
   `imagenes` VARCHAR(200) NOT NULL,
+ `evidencia_activa` smallint(1) NOT NULL default 1,
   `id_solicitud` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`id_evidencias`),
   foreign key (`id_solicitud`) references solicitudes(`id_solicitud`),
@@ -81,3 +82,9 @@ select u.departamento, s.folio, e.imagenes
 from evidencias e
 inner join usuarios u on e.id_usuario = u.id_usuario
 INNER JOIN solicitudes s ON e.id_solicitud = s.id_solicitud; 
+
+SELECT s.responsable, e.folio, e.imagenes 
+                             FROM evidencias e
+                             INNER JOIN solicitudes s ON 
+                             e.id_solicitud = s.id_solicitud
+                             WHERE e.evidencia_activa = 1;

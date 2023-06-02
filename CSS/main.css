@@ -326,6 +326,10 @@ margin-right: 5px;
     #check:checked~nav{
         right: 0;
     }
+    /*--------------Boton de descarga----------------*/
+.descarga{
+    width: 40%;
+}
 
     /*Main*/
 
@@ -356,6 +360,18 @@ margin-right: 5px;
     }
     .tablaPA{
         grid-column: 1/5;
+    }
+
+    .footer{
+        width: 185%;
+        display: flex;
+        justify-content: space-around;
+        row-gap: 30px;
+    }
+    
+    .footer p{
+        width: 100%;
+        font-size: 1.5rem;
     }
 
 }

@@ -7,10 +7,11 @@ $consulta = "SELECT *
     
     $res = mysqli_query($conexion, $consulta);
    $administrador = mysqli_fetch_array($res);
-
+   date_default_timezone_set("America/Mexico_City");
 
 foreach ($conexion->query("SELECT * FROM solicitudes WHERE rac_activo = 1") as $solicitud) {
-    $fechaMenor = strtotime($solicitud['fecha_terminacion']);
+    $fechaActual = date("Y-m-d");
+    $fechaMenor = strtotime($fechaActual);
     $fechaMayor = strtotime($solicitud['fecha_programada']);
     $dias = ($fechaMayor - $fechaMenor)/60/60/24;
     if ($dias >= 7) {

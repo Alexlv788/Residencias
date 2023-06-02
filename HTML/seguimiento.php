@@ -21,7 +21,8 @@ if($btnMandarEvicencias != ''){
     <div>
         <button class ="cerrar" id="cerrar" onclick="cerrarVentana()" >
         <i class="fa-solid fa-x" style="color: #f50511;"></i></button>
-        <form action="../PHP/obtenerEvidencias.php" method="post" class="formFile" enctype="multipart/form-data">
+        <form action="../PHP/obtenerEvidencias.php" method="post" class="formFile" 
+        enctype="multipart/form-data">
             <h3>Ingresa las evidencias</h3>
             <label for="files">Adjunta los archivos</label>
             <input type="file" id="files" name="evidencias[]" multiple = "" >
@@ -101,10 +102,6 @@ if($btnMandarEvicencias != ''){
             <p>Rev. 2</p>
         </div>
     </main>
-
-    
-
-    
     <script src="../JS/mostraVentana.js?uuid=<?php echo uniqid(); ?>"></script>
 </body>
 </html>

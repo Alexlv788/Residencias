@@ -19,7 +19,11 @@ if ($btnCerrar != '') {
     include_once("../PHP/cerrarRAC.php");
 }
 
-
+$btnCerrarEvidencias = isset($_POST['cerrarEvi']) ? $_POST['cerrarEvi']:'';
+$folio = isset($_POST['btn-folio']) ? $_POST['btn-folio']: '' ;
+if($btnCerrarEvidencias != ''){
+   include_once("../PHP/cerrarEvidencia.php");
+}
 
 ?>
 <!DOCTYPE html>
@@ -76,29 +80,6 @@ if ($btnCerrar != '') {
             <p>Rev. 2</p>
         </div>
     </main>
-
-
-
-    <!-- <div class= "contenedorAlertas" id = "contenedorAlertas">
-        <div class= "evidencias" id = "evidencias">
-            <section class = "descripcion">
-                <p>Folio :</p>
-                <p>Responsable:</p>
-            </section>
-            <section class = "imagenes">
-                <img src="../EVIDENCIAS/3068380.png" alt="">
-                <img src="../EVIDENCIAS/3068380.png" alt="">
-                <img src="../EVIDENCIAS/151840.png" alt="">
-                <img src="../EVIDENCIAS/cv.jpg" alt="">
-            </section>
-            <div class = "boton">
-                <button class ="verEvidencia">Ver evidencia</button>
-            </div>
-        </div>
-    </div> -->
-
-    
-
     <div class= "contenedorAlertas" id = "contenedorAlertas">
         <button class = "cerrar" onclick="cerrarAlerta()">X</button>
         <?php 

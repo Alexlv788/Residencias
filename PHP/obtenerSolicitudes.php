@@ -10,7 +10,7 @@ $consulta = "SELECT *
    date_default_timezone_set("America/Mexico_City");
    
 
-foreach ($conexion->query("SELECT * FROM solicitudes") as $solicitud) {
+foreach ($conexion->query("SELECT * FROM solicitudes WHERE rac_activo = 1") as $solicitud) {
     $fechaActual = date("Y-m-d");
     $fechaMenor = strtotime($fechaActual);
     $fechaMayor = strtotime($solicitud['fecha_programada']);
