@@ -6,4 +6,5 @@ session_unset();
 session_destroy();
 // Lo regresa al meno de Login
 header("Location:../index.php");
+
 ?>

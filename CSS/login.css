@@ -72,10 +72,8 @@ form{
     margin-bottom: 20px;
 }
 
-
-
 .icono{
-    width: 1.5rem;
+    width: 1.2rem;
 }
 .datos .hide-icon{
     display: none;
@@ -84,7 +82,7 @@ form{
 .datos .show-icon{
     position: absolute;
     left: 78%;
-    top: 60px;
+    top: 58px;
     cursor: pointer;
     width: auto;
 }

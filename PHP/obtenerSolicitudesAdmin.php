@@ -35,7 +35,7 @@ foreach ($conexion->query("SELECT * FROM solicitudes WHERE rac_activo = 1") as $
             <td data-label = 'Fecha de Revisión'>".$solicitud['fecha_terminacion']."</td>
             <td data-label = 'Estado'>".$semaforo."</td>
             <td data-label = 'Fecha Programada'>".$solicitud['fecha_programada']."</td>
-            <td data-label = 'Responsable de la verificación'>".$administrador['nombre']."</td>
+            <td data-label = 'Responsable de la verificación' class = 'overflow'>".$administrador['nombre']."</td>
             <td id='delete'>
             <input type='submit' name ='cerrarRAC' id='cerrarRAC' value='Cerrar RAC'></input>
             </td>

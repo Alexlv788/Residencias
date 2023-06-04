@@ -11,6 +11,7 @@ if ($_POST) {
     session_start();
     /*Declaramos variables de Sesion que almacenen el departamento del usuario*/
     $_SESSION['departamento'] = $datos['departamento'];
+    $_SESSION['id_usuario'] = $datos['id_usuario'];
     /*Direccionamos al usuario al formulario del RAC */
     if ($datos['tipo_usuario'] == 0) {header("Location:/HTML/formulario.php");   
     }else {

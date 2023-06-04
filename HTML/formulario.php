@@ -16,6 +16,17 @@ if(!isset($_SESSION['departamento'])){
     $fechaActual = date("Y-m-d");
 ?>
 
+<?php 
+include_once("../PHP/cambioContrasena.php");
+    if ($mensajePass != "") {
+        echo '
+        <script>
+            alert("'.$mensajePass.'");
+        </script>
+        '; 
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -37,6 +48,7 @@ if(!isset($_SESSION['departamento'])){
             <label for="check" class="mostrar-menu">&#8801</label>
             <nav>
                 <a href="../HTML/seguimiento.php">Seguimiento del RAC</a>
+                <a href="#" onclick="abrirPass()">Cambiar contraseña</a>
                 <a href="../PHP/cerrarSesion.php" class="logout">cerrar sesion</a>
                 <label for="check" class="ocultar-menu">&#215</label>
             </nav>
@@ -133,6 +145,28 @@ if(!isset($_SESSION['departamento'])){
             </form>
             
         </main>
-        
+
+        <div class = "contenedorCambioContra" id = "contenedorCambioContra">
+        <button class = "cerrar" onclick="cerrarPass()">X</button>
+            <form action="" class = "cambioPass" method = "post">
+                <label for="pass1">Nueva contraseña:</label>
+                <input type="password" name="pass1" id="pass1">
+                <label for="passControl" class="show-icon" id="hide">
+                        <img src="/SOURCES/icons/icons8-hide-16.png" alt="" class = "icono"></label>
+                    <label for="passControl" class="hide-icon" id="show">
+                        <img src="/SOURCES/icons/icons8-eye-16.png" alt="" class = "icono"></label>
+                    <input type="checkbox" name="" id="passControl">
+                <label for="pass2">Repita la nueva contraseña:</label>
+                <input type="password" name="pass2" id="pass2">
+                <label for="passControl2" class="show-icon2" id="hide2">
+                        <img src="/SOURCES/icons/icons8-hide-16.png" alt="" class = "icono"></label>
+                    <label for="passControl2" class="hide-icon2" id="show2">
+                        <img src="/SOURCES/icons/icons8-eye-16.png" alt="" class = "icono"></label>
+                    <input type="checkbox" name="" id="passControl2">
+                <input type="submit" value="Cambiar Contraseña" name= "sendPass">
+            </form>
+        </div>
+        <script src="../JS/ventanaPass.js"></script>
+        <script src="../JS/cambioPass.js"></script>
     </body>
 </html>

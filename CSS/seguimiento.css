@@ -121,7 +121,7 @@ td{
     border: 2px solid var(--secundary-color);
     color: #444;
     height: 1.5em;
-    font-size: 1.3rem;
+    font-size: 1rem;
     padding: 5px;
     text-align: left;
     
@@ -272,6 +272,106 @@ button:active{
     .rojo{
         background-color: red;
     }
+
+/*---------------Cambio Pass---------------*/
+.contenedorCambioContra{
+    width: 40%;
+    height: 20rem;
+    position: absolute;
+    top: 17%;
+    right: 2%;
+    background-color: white;
+    border-radius: 10px;
+    display: none;
+    align-items: center;
+    box-shadow: 10px 10px 20px var(--main-shadow);
+    flex-direction: column;
+    padding-top: 2%;
+}
+.cerrarPass{
+    width: 10%;
+    color: #D21312;
+    background-color: white;
+    border:1px solid #D21312;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.cambioPass{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+}
+
+.cambioPass label{
+    font-size: 1.3rem;
+    text-align: left;
+    width: 80%;
+    margin-bottom: 5%;
+}
+
+.cambioPass input{
+    border: none;
+    border-bottom:2px solid #444;
+    width: 80%;
+    cursor: text;
+    height: 1.5rem;
+    font-size: 1.3rem;
+    padding-left: 5%;
+    position: relative;
+    margin-bottom: 5%;
+}
+
+.cambioPass input[type = "submit"]{
+    width: 50%;
+    cursor: pointer;
+    height: 1.8rem;
+    font-size: 1.3rem;
+    text-align: center;
+    background-color: #0e264d;
+    color: white;
+    border: none;
+    border-radius: 10px;
+
+
+}
+
+.icono{
+    width: 1.2rem;
+}
+.cambioPass .hide-icon{
+    display: none;
+}
+
+.cambioPass .show-icon{
+    position: absolute;
+    left: 80%;
+    top: 122px;
+    cursor: pointer;
+    width: auto;
+}
+
+.cambioPass #passControl{
+    display: none;
+}
+
+.cambioPass .hide-icon2{
+    display: none;
+}
+
+.cambioPass .show-icon2{
+    position: absolute;
+    left: 80%;
+    top: 220px;
+    cursor: pointer;
+    width: auto;
+}
+
+.cambioPass #passControl2{
+    display: none;
+}
 /*Responsive*/
 @media(max-width: 768px){
     /*----------------------header--------------------*/
@@ -289,7 +389,7 @@ button:active{
         top: 0;
         text-align: center;
         padding: 100px 0;
-        z-index: 100;
+        z-index: 10;
         transition: 0.8s;
     }
 
@@ -395,4 +495,29 @@ button:active{
     width: 50%;
 }
 
+/*---------------Cambio Pass---------------*/
+
+.contenedorCambioContra{
+    width: 60%;
+    height: 20rem;
+    top :30%;
+    right: 20%;
+    z-index: 100;
+}
+
+.cambioPass input[type = "submit"]{
+    font-size: 1rem;
+}
+
+.cambioPass .show-icon{
+    left: 80%;
+    top: 108px;
+}
+
+.cambioPass .show-icon2{
+
+    left: 80%;
+    top: 197px;
+
+}
 }
