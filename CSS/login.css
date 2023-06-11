@@ -53,20 +53,20 @@ form{
 }
 .datos input{
     width: 70%;
-    font-size: 1.5rem;
+    font-size: 1rem;
     box-sizing: border-box;
     font-weight: 400;
     color: #444;
     border: 1px solid #aaa;
     box-shadow: 0 1px 0 1px rgba(0,0,0,.03);
     border-radius: .3em;
-    height: 1.8em;
+    height: 1.5em;
     padding-left: 20px;
     margin-bottom: 2%;
     position: relative;
 }
 .datos label{
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     text-align: left;
     width: 70%;
     margin-bottom: 20px;
@@ -82,7 +82,7 @@ form{
 .datos .show-icon{
     position: absolute;
     left: 78%;
-    top: 58px;
+    top: 45px;
     cursor: pointer;
     width: auto;
 }
@@ -106,7 +106,7 @@ form input[type ="submit"]{
     background-color: #E76161;
     width: 80%;
     height: 4rem;
-    margin: 15% auto 0;
+    margin: 5% auto 0;
     text-align: center;
     border-radius: 8px;
     padding: 2%;
@@ -121,6 +121,10 @@ form input[type ="submit"]{
 
     .datos .show-icon{
         left: 78%;
+    }
+
+    .itlp-image{
+        margin-bottom: 2%;
     }
 }
 
