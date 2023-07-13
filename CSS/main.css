@@ -213,6 +213,7 @@ margin-right: 5px;
     padding-left: 20px;
 }
 .elemento6{
+    position: relative;
     display: grid;
     grid-template-columns: auto auto auto auto;
     height: 100%;
@@ -247,6 +248,31 @@ margin-right: 5px;
     margin-top: 20px;
 
 }
+
+/*-------------- Boton para agregar otra fila--------------------*/
+
+.addRow{
+    text-decoration: none;
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    border-radius: 50%;
+    position: absolute;
+    right: 1rem;
+    top: 100%;
+    color: white;
+    background-color: #F7C04A;
+    font-size: 2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.addRow:active{
+    transform: translateY(2px);
+}
+/*---------------------------------------------------------------*/
 
 
 .boton{
@@ -383,7 +409,9 @@ margin-right: 5px;
 .cambioPass #passControl2{
     display: none;
 }
-/*Responsive*/
+
+
+/*---------------------------Responsive------------------------------------*/
 @media(max-width: 768px){
     /*Header*/
     .mostrar-menu,

@@ -39,8 +39,34 @@ if($btnMandarEvicencias != ''){
     </script>
     ';  
 }
+?>
 
+<?php
+$btnMandarEvicencias = isset($_POST['btnMostrarAcciones']) ? $_POST['btnMostrarAcciones']:'';
+if($btnMandarEvicencias != ''){
 
+    echo '<div class = "ventana2" id = "ventana2" >
+    <div class = "accionesContainer">
+    <button class ="cerrar" id="cerrarAccion" onclick="cerrarAccion()" >X</button>
+    <h1 >ACCIONES</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Folio</th>
+                <th>Responsable</th>
+                <th>Acciones</th>
+                <th>Fecha de Revision</th>
+                <th>Estado</th>
+                <th>Fecha Programada</th>
+            </tr>
+        </thead>
+        <tbody>';
+        include_once("..\PHP\mostrarAcciones.php");
+        echo '</tbody>
+    </table>
+    </div>
+    </div>';
+}
 ?>
   
 
@@ -59,7 +85,7 @@ if($btnMandarEvicencias != ''){
     <script src="https://kit.fontawesome.com/2fabd7a9b2.js" crossorigin="anonymous"></script>
     
 
-    <title>Document</title>
+    <title>Seguimiento del RAC</title>
 </head>
 <body>
     <header>
@@ -87,9 +113,10 @@ if($btnMandarEvicencias != ''){
                     <th>Folio</th>
                     <th>Responsable</th>
                     <th>Descripcion</th>
-                    <th>Fecha de Revision</th>
+                    <th>Acciones</th>
+                    <!-- <th>Fecha de Revision</th>
                     <th>Estado</th>
-                    <th>Fecha Programada</th>
+                    <th>Fecha Programada</th> -->
                     <th>Responsable de la verificacion</th>
                 </tr>
             </thead>
@@ -123,6 +150,8 @@ if($btnMandarEvicencias != ''){
                 <input type="submit" value="Cambiar Contraseña" name= "sendPass">
             </form>
         </div>
+           
+        <script src="../JS/cerrarAccion.js?uuid=<?php echo uniqid(); ?>"></script>
         <script src="../JS/ventanaPass.js?uuid=<?php echo uniqid(); ?>"></script>
         <script src="../JS/cambioPass.js?uuid=<?php echo uniqid(); ?>"></script>
     <script src="../JS/mostraVentana.js?uuid=<?php echo uniqid(); ?>"></script>

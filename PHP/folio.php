@@ -1,4 +1,5 @@
 <?php
+
 // Esta funcion lo que hace es obtener el folio que esta antes del "-" (guion) 
 function before($thiss, $inthat)
 { 
@@ -6,11 +7,11 @@ function before($thiss, $inthat)
 };
 
 //Obtenemos el año que se eligio en el campo de fecha elaboración
-$year = substr($fechaProgramada,0,4);
+$year = substr($fechaCreacion,0,4);
 
 
 //Consulta para ver si hay por lo menos un dato en la BD
-$fecha = "SELECT max(fecha_programada) FROM solicitudes WHERE YEAR(fecha_programada) = '$year'";
+$fecha = "SELECT max(fecha_creacion) FROM solicitudes WHERE YEAR(fecha_creacion) = '$year'";
 
 $Ufecha =  mysqli_query($conexion, $fecha) or die("Conexion fallida".mysqli_error($conexion));
 
@@ -19,7 +20,7 @@ $date = mysqli_fetch_array($Ufecha);
 $guardarAnio = substr($date[0],0,4);
 
 //Consulta para obtener el ultimo folio
-$obtenerUltimoFolio = "SELECT folio FROM solicitudes WHERE YEAR(fecha_programada) = '$year' ORDER BY id_solicitud DESC LIMIT 1";
+$obtenerUltimoFolio = "SELECT folio FROM solicitudes WHERE YEAR(fecha_creacion) = '$year' ORDER BY id_solicitud DESC LIMIT 1";
 
 $UFolio = mysqli_query($conexion, $obtenerUltimoFolio) or die("Conexion fallida".mysqli_error($conexion));
 
@@ -30,7 +31,7 @@ $fol1 = substr($fol[0],0);
 
 
 if($guardarAnio == ""){
-    $guardarAnioElabo = substr($fechaProgramada,2,2);
+    $guardarAnioElabo = substr($fechaCreacion,2,2);
 
     $folio = "1-".$guardarAnioElabo;
 }else{

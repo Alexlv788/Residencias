@@ -23,8 +23,7 @@ CREATE TABLE IF NOT EXISTS `RacBD`.`solicitudes` (
   `req_correccion` VARCHAR(2) NULL,
   `tecnica` VARCHAR(200) NOT NULL,
   `causa` VARCHAR(200) NOT NULL,
-  `fecha_programada` date NOT NULL,
-  `fecha_terminacion` date NOT NULL,
+  `fecha_creacion` DATE NOT NULL,
   `rac_activo` smallint(1) NOT NULL default 1,
   PRIMARY KEY (`id_solicitud`))
 ENGINE = InnoDB;
@@ -39,6 +38,24 @@ CREATE TABLE `racbd`.`evidencias` (
   foreign key (`id_solicitud`) references solicitudes(`id_solicitud`),
   UNIQUE INDEX `id_evidencias_UNIQUE` (`id_evidencias` ASC) VISIBLE);
   
+  CREATE TABLE `racbd`.`acciones` (
+  `id_acciones` INT NOT NULL AUTO_INCREMENT,
+  `folio` VARCHAR(6) NOT NULL,
+  `accion` VARCHAR(100) NOT NULL,
+  `responsable` VARCHAR(100) NOT NULL,
+  `fecha_programada` date NOT NULL,
+  `fecha_terminacion` date NOT NULL,
+  `id_solicitud` INT UNSIGNED NOT NULL,
+  PRIMARY KEY (`id_acciones`),
+  foreign key (`id_solicitud`) references solicitudes(`id_solicitud`),
+  UNIQUE INDEX `id_acciones_UNIQUE` (`id_acciones` ASC) VISIBLE);
+
+CREATE TABLE `racbd`.`codigos` (
+  `id_codigos` INT NOT NULL AUTO_INCREMENT,
+  `nombre_documento` VARCHAR(60) NOT NULL,
+  `codigo` VARCHAR(20) NOT NULL,
+  PRIMARY KEY (`id_codigos`),
+  UNIQUE INDEX `id_codigos_UNIQUE` (`id_codigos` ASC) VISIBLE);
 
 START TRANSACTION;
 USE `RacBD`;
@@ -73,7 +90,7 @@ use racbd;
 select * from usuarios;
 select * from solicitudes;
 select * from evidencias;
-
+select * from acciones;
 -- usuario admin
 INSERT INTO usuarios (`nombre`, `apellidos`, `departamento`, `correo`, `contraseña`, `tipo_usuario`) 
 VALUES ('ADMINISTRADOR','DEL RAC','ADMINISTRADOR DEL RAC','adminRac@piedad.tecnm.mx','adminRacITLP', 1);
@@ -81,6 +98,7 @@ VALUES ('ADMINISTRADOR','DEL RAC','ADMINISTRADOR DEL RAC','adminRac@piedad.tecnm
 -- drop table usuarios;
 -- drop table solicitudes;
 -- drop table evidencias;
+-- drop table acciones;
 
 select u.departamento, s.folio, e.imagenes
 from evidencias e
@@ -92,3 +110,8 @@ SELECT s.responsable, e.folio, e.imagenes
                              INNER JOIN solicitudes s ON 
                              e.id_solicitud = s.id_solicitud
                              WHERE e.evidencia_activa = 1;
+SELECT s.folio, s.responsable, s.descripcion, a.fecha_terminacion, a.fecha_programada 
+                             FROM acciones a
+                             INNER JOIN solicitudes s ON 
+                             a.id_solicitud = s.id_solicitud
+                             WHERE s.rac_activo = 1;

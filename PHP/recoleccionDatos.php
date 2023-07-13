@@ -10,14 +10,17 @@ $tecnica = $_POST["tecnica"];
 $causa = $_POST["causa"];
 $accionesPA = $_POST["accionesPA"];
 $responsablePA = $_POST["responsablePA"];
-$fechaProgramada = $_POST["fechaProgramadaPA"];
-$fechaTerminacion = $_POST["fechaTerminacionPA"];
+date_default_timezone_set("America/Mexico_City");
+$fechaCreacion = date("Y-m-d");
+echo $fechaCreacion;
 include('folio.php');
+
 $consulta = "INSERT INTO solicitudes(folio, area_solicitante, descripcion,
-responsable, req_accion, req_correccion, tecnica, causa, fecha_programada,
-fecha_terminacion)
+responsable, req_accion, req_correccion, tecnica, causa,fecha_creacion)
 VALUES ( '$folio','$area', '$descripcion', '$responsable','$accionCorrectiva','$correccion',
-         '$tecnica','$causa','$fechaProgramada','$fechaTerminacion')";
-    mysqli_query($conexion, $consulta) or die("Conexion fallida".mysqli_error($conexion));;   
+         '$tecnica','$causa','$fechaCreacion')";
+    mysqli_query($conexion, $consulta) or die("Conexion fallida".mysqli_error($conexion));; 
+include('recoleccionAcciones.php');  
     mysqli_close($conexion);
-header("Location:../HTML/seguimiento.php");}?>
+header("Location:../HTML/seguimiento.php");
+}?>

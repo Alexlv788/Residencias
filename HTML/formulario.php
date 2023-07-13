@@ -33,7 +33,7 @@ include_once("../PHP/cambioContrasena.php");
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Formulario RAC</title>
         <link rel="stylesheet" href="../CSS/main.css?uuid=<?php echo uniqid(); ?>" type="text/css">
             <!-- *****************Fuentes************************* -->
             <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -114,24 +114,25 @@ include_once("../PHP/cambioContrasena.php");
                 <!-- ------------------------------------------ -->
                 <div class="elemento6">
                     <h2>Plan de acciones:</h2>
-                    <div class="tablaPA">
+                    <div class="tablaPA" id = "columAcciones">
                         <label for="acciones">ACCIONES</label>
-                        <input type="text" name="accionesPA" id="acciones">
+                        <input type="text" name="accionesPA[]" id="acciones">
                     </div>
-                    <div class="tablaPA">
-                        <label for="responsable">RESPONSANLE</label>
-                        <input type="text" name="responsablePA" id="responsable" 
+                    <div class="tablaPA" id = "columResponsable">
+                        <label for="responsable">RESPONSABLE</label>
+                        <input type="text" name="responsablePA[]" id="responsable" 
                         value = "<?php echo $_SESSION['departamento']; ?> ">
                     </div>
-                    <div class="tablaPA">
+                    <div class="tablaPA" id = "columFechaPro">
                         <label for="fechaProgramada">FECHA PROGRAMADA</label>
-                        <input type="date" name="fechaProgramadaPA" id="fechaProgramada" 
+                        <input type="date" name="fechaProgramadaPA[]" id="fechaProgramada" 
                         value = "<?php echo $fechaActual ?>">
                     </div>
-                    <div class="tablaPA">
+                    <div class="tablaPA" id = "columFechaTer">
                         <label for="fechaTerminacion">FECHA DE TERMINACION</label>
-                        <input type="date" name="fechaTerminacionPA" id="fechaTerminacion">
+                        <input type="date" name="fechaTerminacionPA[]" id="fechaTerminacion">
                     </div>
+                        <a href="#" class="addRow" id = "addRowButton">+</a>
 
                 </div>
                 <div class="boton">
@@ -166,6 +167,7 @@ include_once("../PHP/cambioContrasena.php");
                 <input type="submit" value="Cambiar Contraseña" name= "sendPass">
             </form>
         </div>
+        <script src="../JS/addRow.js?uuid=<?php echo uniqid(); ?>"></script>
         <script src="../JS/ventanaPass.js"></script>
         <script src="../JS/cambioPass.js"></script>
     </body>
