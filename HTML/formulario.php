@@ -140,7 +140,18 @@ include_once("../PHP/cambioContrasena.php");
                 </div>
 
                 <div class="footer">
-                        <p class ="izq">CA-PO-03-01</p>
+                        <!-- <p class ="izq">CA-PO-03-01</p> -->
+                        <p class ="izq">
+                        <?php
+                        include_once("../PHP/conexion.php");
+                        $query = "SELECT codigo
+                                  FROM codigos
+                                  WHERE nombre_documento = 'Solicitud del RAC'";
+                        $res = mysqli_query($conexion, $query);
+                        $codigo = mysqli_fetch_array($res); 
+                        echo $codigo[0];
+                        ?>
+                        </p>
                         <p class ="der">Rev. 2</p>
                 </div>
             </form>

@@ -42,8 +42,8 @@ if($btnMandarEvicencias != ''){
 ?>
 
 <?php
-$btnMandarEvicencias = isset($_POST['btnMostrarAcciones']) ? $_POST['btnMostrarAcciones']:'';
-if($btnMandarEvicencias != ''){
+$btnMostrarAcciones = isset($_POST['btnMostrarAcciones']) ? $_POST['btnMostrarAcciones']:'';
+if($btnMostrarAcciones != ''){
 
     echo '<div class = "ventana2" id = "ventana2" >
     <div class = "accionesContainer">
@@ -126,7 +126,18 @@ if($btnMandarEvicencias != ''){
             
         </table>
         <div class="footer">
-            <p>CA-PO-03-02</p>
+            <!-- <p>CA-PO-03-02</p> -->
+            <p class ="izq">
+                        <?php
+                        include_once("../PHP/conexion.php");
+                        $query = "SELECT codigo
+                                  FROM codigos
+                                  WHERE nombre_documento = 'Seguimiento del RAC'";
+                        $res = mysqli_query($conexion, $query);
+                        $codigo = mysqli_fetch_array($res); 
+                        echo $codigo[0];
+                        ?>
+            </p>
             <p>Rev. 2</p>
         </div>
     </main>

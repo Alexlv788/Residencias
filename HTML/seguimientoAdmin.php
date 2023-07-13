@@ -28,8 +28,8 @@ if($btnCerrarEvidencias != ''){
 ?>
 
 <?php
-$btnMandarEvicencias = isset($_POST['btnMostrarAcciones']) ? $_POST['btnMostrarAcciones']:'';
-if($btnMandarEvicencias != ''){
+$btnMostrarAcciones = isset($_POST['btnMostrarAcciones']) ? $_POST['btnMostrarAcciones']:'';
+if($btnMostrarAcciones != ''){
 
     echo '<div class = "ventana2" id = "ventana2" >
     <div class = "accionesContainer">
@@ -75,9 +75,12 @@ if($btnMandarEvicencias != ''){
         <input type="checkbox" name="" id="check">
         <label for="check" class="mostrar-menu">&#8801</label>
         <nav>
+            <a href="#" onclick="abrirCodigos()">Cambiar código</a>
             <a href="#" onclick="abrirAlerta()">Evidencias</a>
             <a href="#" onclick="abrirPass()">Cambiar contraseña</a>
+            <!-- <a href="../HTML/formulario.php" >Ir al Formulario</a> -->
             <a href="../PHP/cerrarSesion.php" class="logout">cerrar sesion</a>
+            
             <label for="check" class="ocultar-menu">&#215</label>
         </nav>
     </header>
@@ -90,14 +93,9 @@ if($btnMandarEvicencias != ''){
         <table>
             <thead>
                 <tr>
-                <th>
-                    Folio</th>
+                    <th>Folio</th>
                     <th>Responsable</th>
                     <th>Descripcion</th>
-                    <th>Acciones</th>
-                    <!-- <th>Fecha de Revision</th>
-                    <th>Estado</th>
-                    <th>Fecha Programada</th> -->
                     <th>Responsable de la verificacion</th>
                 </tr>
             </thead>
@@ -107,7 +105,18 @@ if($btnMandarEvicencias != ''){
 
         </table>
         <div class="footer">
-            <p>CA-PO-03-02</p>
+            <!-- <p>CA-PO-03-02</p> -->
+            <p class ="izq">
+                        <?php
+                        include_once("../PHP/conexion.php");
+                        $query = "SELECT codigo
+                                  FROM codigos
+                                  WHERE nombre_documento = 'Seguimiento del RAC'";
+                        $res = mysqli_query($conexion, $query);
+                        $codigo = mysqli_fetch_array($res); 
+                        echo $codigo[0];
+                        ?>
+            </p>
             <p>Rev. 2</p>
         </div>
     </main>
@@ -137,6 +146,22 @@ if($btnMandarEvicencias != ''){
                 <input type="submit" value="Cambiar Contraseña" name= "sendPass">
             </form>
         </div>
+
+        <div class = "cambioCodigos" id = "cambioCodigos">
+            <button class = "cerrar" onclick="cerrarCodigos()">X</button>
+            <form action="/PHP/cambioCodigos.php" class = "codigos" method = "post">
+                <label for="documento">Documento al que le cambiara el código</label>
+                <select name="documento" id="documento">
+                        <option value="default" disabled="disabled" selected="selected">Seleccione el documento</option>
+                        <option value="Solicitud del RAC">Solicitud del RAC</option>
+                        <option value="Seguimiento del RAC">Seguimiento del RAC</option>
+                </select>
+                <label for="newCodigo">Ingrese el nuevo código</label>
+                <input type="text" name="newCodigo" id="newCodigo">
+                <input type="submit" value="Cambiar código" name = "chageNewCode">
+            </form>
+        </div>
+        <script src="../JS/ventanaCodigos.js?uuid=<?php echo uniqid(); ?>"></script>
         <script src="../JS/ventanaPass.js"></script>
         <script src="../JS/cambioPass.js"></script>
         <script src="../JS/cerrarAccion.js?uuid=<?php echo uniqid(); ?>"></script>

@@ -88,12 +88,19 @@ use racbd;
 
 
 select * from usuarios;
-select * from solicitudes;
+select * from solicitudes; 
 select * from evidencias;
 select * from acciones;
+select * from codigos;
 -- usuario admin
 INSERT INTO usuarios (`nombre`, `apellidos`, `departamento`, `correo`, `contraseña`, `tipo_usuario`) 
 VALUES ('ADMINISTRADOR','DEL RAC','ADMINISTRADOR DEL RAC','adminRac@piedad.tecnm.mx','adminRacITLP', 1);
+
+
+INSERT INTO codigos (`nombre_documento`, `codigo`)
+VALUES ('Solicitud del RAC','CA-PO-03-01'),
+	   ('Seguimiento del RAC','CA-PO-03-02');
+
 
 -- drop table usuarios;
 -- drop table solicitudes;

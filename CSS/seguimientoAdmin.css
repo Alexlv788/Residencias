@@ -429,6 +429,85 @@ button:active{
 }
 /*------------------------------------------------*/
 
+/*Cambio codigos*/
+/*---------------Cambio Pass---------------*/
+.cambioCodigos{
+    width: 40%;
+    height: 20rem;
+    position: absolute;
+    top: 17%;
+    right: 2%;
+    background-color: white;
+    border-radius: 10px;
+    display: none;
+    align-items: center;
+    box-shadow: 10px 10px 20px var(--main-shadow);
+    flex-direction: column;
+    padding-top: 2%;
+}
+.cerrar{
+    width: 10%;
+    color: #D21312;
+    background-color: white;
+    border:1px solid #D21312;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.codigos{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+}
+
+.codigos label{
+    font-size: 1.3rem;
+    text-align: left;
+    width: 80%;
+    margin-bottom: 5%;
+}
+
+.codigos input{
+    border: none;
+    border-bottom:2px solid #444;
+    width: 80%;
+    cursor: text;
+    height: 1.5rem;
+    font-size: 1.3rem;
+    padding-left: 5%;
+    position: relative;
+    margin-bottom: 5%;
+}
+
+.codigos input[type = "submit"]{
+    width: 50%;
+    cursor: pointer;
+    height: 1.8rem;
+    font-size: 1.3rem;
+    text-align: center;
+    background-color: #0e264d;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+.codigos select{
+    width: 80%;
+    font-size: 1.2rem;
+    box-sizing: border-box;
+    /* font-family: 'Verdana', sans-serif; */
+    font-weight: 400;
+    color: #444;
+    margin: 20px auto;
+    border: 1px solid #aaa;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.03);
+    border-radius: .3em;
+    height: 1.5em;
+    padding-left: 20px;
+}
+
+
 /*Responsive*/
 @media(max-width: 768px){
     /*----------------------header--------------------*/
@@ -514,6 +593,10 @@ button:active{
         height: 1.5em;
         font-size: 1rem;
     }
+    #btnMostrarAcciones{
+    width: 15%;
+    height: 2em;
+    }
  
    table td::before{
     content: attr(data-label);
@@ -570,5 +653,13 @@ button:active{
     left: 80%;
     top: 197px;
 
+}
+
+.cambioCodigos{
+    width: 60%;
+    height: 20rem;
+    top :30%;
+    right: 20%;
+    z-index: 100;
 }
 }
